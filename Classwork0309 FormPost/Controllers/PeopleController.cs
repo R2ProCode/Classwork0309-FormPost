@@ -1,0 +1,36 @@
+﻿using Classwork0309_FormPost.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Classwork0309_FormPost.Controllers
+{
+    public class PeopleController : Controller
+    {
+        // GET: People
+        public ActionResult Index()
+        {
+            PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
+            PeopleViewModel viewModel = new PeopleViewModel
+            {
+                People = dbManager.GetAllPeople()
+            };
+            return View(viewModel);
+        }
+                
+        public ActionResult AddPersonForm()
+        {
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult AddPerson(string firstname, string lastname, int age)
+        {
+            PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
+            dbManager.AddPerson(firstname, lastname, age);
+            return Redirect("/people/index");
+        }
+    }
+}
