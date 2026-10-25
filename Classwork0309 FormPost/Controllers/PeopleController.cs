@@ -32,7 +32,7 @@ namespace Classwork0309_FormPost.Controllers
             dbManager.AddPerson(firstname, lastname, age);
             return Redirect("/people/index");
         }
-
+        [HttpPost]
         public ActionResult DeletePerson(int id)
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
