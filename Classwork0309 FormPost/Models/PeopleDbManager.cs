@@ -68,17 +68,18 @@ namespace Classwork0309_FormPost.Models
             command.Parameters.AddWithValue("@id", id);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
+            if (!reader.Read())
             {
-                return new Person
-                {
-                    Id = (int)reader["Id"],
-                    FirstName = (string)reader["FirstName"],
-                    LastName = (string)reader["LastName"],
-                    Age = (int)reader["Age"]
-                };
-            }
-            return null;
+                return null;
+            };
+
+            return new Person
+            {
+                Id = (int)reader["Id"],
+                FirstName = (string)reader["FirstName"],
+                LastName = (string)reader["LastName"],
+                Age = (int)reader["Age"]
+            };
         }
         public void UpdatePerson(Person person)
         {
