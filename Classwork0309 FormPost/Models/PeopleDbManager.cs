@@ -84,7 +84,11 @@ namespace Classwork0309_FormPost.Models
         {
             SqlConnection connection = new SqlConnection(_connectionString);
             SqlCommand command = connection.CreateCommand();
-            command.CommandText = @"UPDATE People SET FirstName = @firstName, LastName = @lastName, Age = @age WHERE Id = @id";
+            command.CommandText = @"UPDATE People SET 
+                                    FirstName = @firstName, 
+                                    LastName = @lastName, 
+                                    Age = @age 
+                                    WHERE Id = @id";
             command.Parameters.AddWithValue("@id", person.Id);
             command.Parameters.AddWithValue("@firstName", person.FirstName);
             command.Parameters.AddWithValue("@lastName", person.LastName);
