@@ -20,13 +20,13 @@
                     <h1>Edit Person</h1>
                 </div>
                 <div class="col-md-6 offset-md-3 mt-3">
-                    <input type="text" value="@Model.FirstName" class="form-control" name="firstname" placeholder="Enter first name" />
+                    <input type="text" value="@Model.Person.FirstName" class="form-control" name="firstname" placeholder="Enter first name" />
                 </div>
                 <div class="col-md-6 offset-md-3 mt-3">
-                    <input type="text" value="@Model.LastName" class="form-control" name="lastname" placeholder="Enter last name" />
+                    <input type="text" value="@Model.Person.LastName" class="form-control" name="lastname" placeholder="Enter last name" />
                 </div>
                 <div class="col-md-6 offset-md-3 mt-3">
-                    <input type="text" value="@Model.Age" class="form-control" name="age" placeholder="Enter age" />
+                    <input type="text" value="@Model.Person.Age" class="form-control" name="age" placeholder="Enter age" />
                 </div>
                 <div class="col-md-6 offset-md-3 mt-3">                    
                     <input type="hidden" name="id" value="@Model.Id" />

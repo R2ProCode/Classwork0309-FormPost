@@ -40,10 +40,12 @@
                             <td>
                                 <form method="post" action="/people/delete">
                                     <input type="hidden" name="id" value="@person.Id" />
-                                    <button class="btn btn-danger">Delete</button>                                    
-                                </form>                                
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
-                            <td><a href="/people/edit?id=@person.Id" class="btn btn-success">Edit</a></td>
+                            <td>
+                                <a href="/people/edit?id=@person.Id" class="btn btn-success">Edit</a>
+                            </td>
                         </tr>
                     }
                 </tbody>
