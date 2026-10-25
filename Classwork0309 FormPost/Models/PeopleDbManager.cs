@@ -49,5 +49,15 @@ namespace Classwork0309_FormPost.Models
             connection.Open();
             command.ExecuteNonQuery();
         }
+
+        public void DeletePerson(int id)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = connection.CreateCommand();
+            command.CommandText = @"DELETE FROM People WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", id);
+            connection.Open();
+            command.ExecuteNonQuery();
+        }
     }
 }

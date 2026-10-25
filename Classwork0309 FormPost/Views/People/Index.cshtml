@@ -25,6 +25,7 @@
                         <td>First Name</td>
                         <td>Last Name</td>
                         <td>Age</td>
+                        <td>Delete</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,12 @@
                             <td>@person.FirstName</td>
                             <td>@person.LastName</td>
                             <td>@person.Age</td>
+                            <td>
+                                <form method="post" action="/people/deleteperson">
+                                    <input type="hidden" name="id" value="@person.Id" />
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     }
                 </tbody>
