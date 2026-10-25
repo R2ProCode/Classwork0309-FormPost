@@ -117,8 +117,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Views\People\Index.cshtml" />
-    <Content Include="Views\People\AddPersonForm.cshtml" />
-    <Content Include="Views\People\EditPersonForm.cshtml" />
+    <Content Include="Views\People\Add.cshtml" />
+    <Content Include="Views\People\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

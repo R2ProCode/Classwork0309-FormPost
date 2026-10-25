@@ -26,21 +26,21 @@ namespace Classwork0309_FormPost.Controllers
 
         }
         [HttpPost]
-        public ActionResult AddPerson(string firstname, string lastname, int age)
+        public ActionResult Add(string firstname, string lastname, int age)
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
             dbManager.AddPerson(firstname, lastname, age);
             return Redirect("/people/index");
         }
         [HttpPost]
-        public ActionResult DeletePerson(int id)
+        public ActionResult Delete(int id)
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
             dbManager.DeletePerson(id);
             return Redirect("/people/index");
         }
 
-        public ActionResult EditPersonForm(int id)
+        public ActionResult Edit(int id)
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
             Person person = dbManager.GetPersonById(id);
@@ -57,7 +57,7 @@ namespace Classwork0309_FormPost.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdatePerson(int id, string firstName, string lastName, int age)
+        public ActionResult Update(int id, string firstName, string lastName, int age)
         {
             PeopleDbManager dbmanager = new PeopleDbManager(Properties.Settings.Default.ConStr);
             dbmanager.UpdatePerson(id, firstName, lastName, age);

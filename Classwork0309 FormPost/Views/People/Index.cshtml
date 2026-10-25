@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row mt-5">
             <h1>
-                <a href="/people/addpersonform" class="btn btn-dark w-100">Add Person</a>
+                <a href="/people/add" class="btn btn-dark w-100">Add Person</a>
             </h1>
             <table class="table table-hover table-bordered table-striped">
                 <thead>
@@ -38,12 +38,12 @@
                             <td>@person.LastName</td>
                             <td>@person.Age</td>
                             <td>
-                                <form method="post" action="/people/deleteperson">
+                                <form method="post" action="/people/delete">
                                     <input type="hidden" name="id" value="@person.Id" />
                                     <button class="btn btn-danger">Delete</button>                                    
                                 </form>                                
                             </td>
-                            <td><a href="/people/editpersonform?id=@person.Id" class="btn btn-success">Edit</a></td>
+                            <td><a href="/people/edit?id=@person.Id" class="btn btn-success">Edit</a></td>
                         </tr>
                     }
                 </tbody>
