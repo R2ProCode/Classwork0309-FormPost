@@ -43,10 +43,11 @@ namespace Classwork0309_FormPost.Controllers
         public ActionResult Edit(int id)
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
-            
+            Person person = dbManager.GetPersonById(id);
+
             EditPersonViewModel viewModel = new EditPersonViewModel
             {
-                Person = dbManager.GetPersonById(id)
+                Person = person
             };
 
             return View(viewModel);
