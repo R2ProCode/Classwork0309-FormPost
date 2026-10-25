@@ -80,15 +80,15 @@ namespace Classwork0309_FormPost.Models
             }
             return null;
         }
-        public void UpdatePerson(int id, string firstName, string lastName, int age)
+        public void UpdatePerson(Person person)
         {
             SqlConnection connection = new SqlConnection(_connectionString);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = @"UPDATE People SET FirstName = @firstName, LastName = @lastName, Age = @age WHERE Id = @id";
-            command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@firstName", firstName);
-            command.Parameters.AddWithValue("@lastName", lastName);
-            command.Parameters.AddWithValue("@age", age);
+            command.Parameters.AddWithValue("@id", person.Id);
+            command.Parameters.AddWithValue("@firstName", person.FirstName);
+            command.Parameters.AddWithValue("@lastName", person.LastName);
+            command.Parameters.AddWithValue("@age", person.Age);
             connection.Open();
             command.ExecuteNonQuery();
         }

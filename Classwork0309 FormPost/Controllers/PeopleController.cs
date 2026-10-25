@@ -53,10 +53,10 @@ namespace Classwork0309_FormPost.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(int id, string firstName, string lastName, int age)
+        public ActionResult Update(Person person)
         {
             PeopleDbManager dbmanager = new PeopleDbManager(Properties.Settings.Default.ConStr);
-            dbmanager.UpdatePerson(id, firstName, lastName, age);
+            dbmanager.UpdatePerson(person);
             return Redirect("/people/index");
         }
     }
