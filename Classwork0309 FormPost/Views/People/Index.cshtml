@@ -26,6 +26,7 @@
                         <td>Last Name</td>
                         <td>Age</td>
                         <td>Delete</td>
+                        <td>Edit</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,9 +40,10 @@
                             <td>
                                 <form method="post" action="/people/deleteperson">
                                     <input type="hidden" name="id" value="@person.Id" />
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+                                    <button class="btn btn-danger">Delete</button>                                    
+                                </form>                                
                             </td>
+                            <td><a href="/people/editpersonform?id=@person.Id" class="btn btn-success">Edit</a></td>
                         </tr>
                     }
                 </tbody>

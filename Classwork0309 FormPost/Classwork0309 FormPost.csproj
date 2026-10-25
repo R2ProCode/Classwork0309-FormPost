@@ -98,6 +98,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AddPersonViewModel.cs" />
+    <Compile Include="Models\EditPersonViewModel.cs" />
     <Compile Include="Models\PeopleDbManager.cs" />
     <Compile Include="Models\PeopleViewModel.cs" />
     <Compile Include="Models\Person.cs" />
@@ -117,6 +118,7 @@
     </None>
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\People\AddPersonForm.cshtml" />
+    <Content Include="Views\People\EditPersonForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

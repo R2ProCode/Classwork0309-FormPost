@@ -19,7 +19,7 @@ namespace Classwork0309_FormPost.Controllers
             };
             return View(viewModel);
         }
-                
+
         public ActionResult AddPersonForm()
         {
             return View();
@@ -37,6 +37,30 @@ namespace Classwork0309_FormPost.Controllers
         {
             PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
             dbManager.DeletePerson(id);
+            return Redirect("/people/index");
+        }
+
+        public ActionResult EditPersonForm(int id)
+        {
+            PeopleDbManager dbManager = new PeopleDbManager(Properties.Settings.Default.ConStr);
+            Person person = dbManager.GetPersonById(id);
+
+            EditPersonViewModel viewModel = new EditPersonViewModel
+            {
+                Id = person.Id,
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Age = person.Age
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult UpdatePerson(int id, string firstName, string lastName, int age)
+        {
+            PeopleDbManager dbmanager = new PeopleDbManager(Properties.Settings.Default.ConStr);
+            dbmanager.UpdatePerson(id, firstName, lastName, age);
             return Redirect("/people/index");
         }
     }

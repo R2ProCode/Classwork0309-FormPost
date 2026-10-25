@@ -59,5 +59,38 @@ namespace Classwork0309_FormPost.Models
             connection.Open();
             command.ExecuteNonQuery();
         }
+
+        public Person GetPersonById(int id)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = connection.CreateCommand();
+            command.CommandText = @"SELECT * FROM People WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", id);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Person
+                {
+                    Id = (int)reader["Id"],
+                    FirstName = (string)reader["FirstName"],
+                    LastName = (string)reader["LastName"],
+                    Age = (int)reader["Age"]
+                };
+            }
+            return null;
+        }
+        public void UpdatePerson(int id, string firstName, string lastName, int age)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = connection.CreateCommand();
+            command.CommandText = @"UPDATE People SET FirstName = @firstName, LastName = @lastName, Age = @age WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@firstName", firstName);
+            command.Parameters.AddWithValue("@lastName", lastName);
+            command.Parameters.AddWithValue("@age", age);
+            connection.Open();
+            command.ExecuteNonQuery();
+        }
     }
 }

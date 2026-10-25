@@ -13,8 +13,11 @@
 </head>
 <body>
     <div class="container mt-5">
-        <div class="row">
+        <div class="row">            
             <form method="post" action="/people/addperson">
+                <div class="col-md-6 offset-md-3 mt-3">
+                    <h1>Add Person</h1>
+                </div>                
                 <div class="col-md-6 offset-md-3 mt-3">
                     <input type="text" class="form-control" name="firstname" placeholder="Enter first name" />
                 </div>
@@ -25,7 +28,7 @@
                     <input type="text" class="form-control" name="age" placeholder="Enter age" />
                 </div>
                 <div class="col-md-6 offset-md-3 mt-3">
-                    <button class="btn btn-dark w-100">Add person</button>
+                    <button class="btn btn-dark w-100">Submit</button>
                 </div>
             </form>
         </div>
