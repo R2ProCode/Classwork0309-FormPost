@@ -8,9 +8,5 @@ namespace Classwork0309_FormPost.Models
     public class EditPersonViewModel
     {
         public Person Person { get; set; }
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
     }
 }
